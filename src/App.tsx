@@ -3,6 +3,7 @@ import { LandingPage } from './pages/LandingPage';
 import { Auth } from './components/Auth';
 import { TodoApp } from './components/TodoApp';
 import { useAuth } from './hooks/useAuth';
+import { ReloadPrompt } from './components/ReloadPrompt';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
@@ -67,6 +68,7 @@ function App() {
         {/* Catch all other routes and redirect to landing */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
+      <ReloadPrompt />
     </Router>
   );
 }
