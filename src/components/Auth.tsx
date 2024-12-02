@@ -4,6 +4,7 @@ import { supabase } from '../lib/supabase';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useAuth } from '../hooks/useAuth';
+import { Footer } from './Footer';
 
 export function Auth() {
   const navigate = useNavigate();
@@ -16,24 +17,28 @@ export function Auth() {
   }, [user, navigate]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-100 to-pink-100 py-6 sm:py-12 px-4">
-      <div className="w-full max-w-sm sm:max-w-md mx-auto p-6 sm:p-8 bg-white rounded-xl sm:rounded-2xl shadow-md">
-        <SupabaseAuth
-          supabaseClient={supabase}
-          appearance={{
-            theme: ThemeSupa,
-            variables: {
-              default: {
-                colors: {
-                  brand: '#9333ea',
-                  brandAccent: '#7e22ce',
+    <div className="min-h-screen bg-gradient-to-br from-purple-100 to-pink-100 flex flex-col">
+      <div className="flex-grow py-6 sm:py-12 px-4">
+        <div className="w-full max-w-sm sm:max-w-md mx-auto p-6 sm:p-8 bg-white rounded-xl sm:rounded-2xl shadow-md">
+          <SupabaseAuth
+            supabaseClient={supabase}
+            appearance={{
+              theme: ThemeSupa,
+              variables: {
+                default: {
+                  colors: {
+                    brand: '#9333ea',
+                    brandAccent: '#7e22ce',
+                  },
                 },
               },
-            },
-          }}
-          providers={['google']}
-        />
+            }}
+            providers={['google']}
+            redirectTo={`${window.location.origin}/todos`}
+          />
+        </div>
       </div>
+      <Footer />
     </div>
   );
 }

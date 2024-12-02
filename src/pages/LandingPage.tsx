@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { Footer } from '../components/Footer';
 
 export function LandingPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-100 to-purple-100">
-      <div className="container mx-auto px-4 py-6 sm:py-12">
+    <div className="min-h-screen bg-gradient-to-br from-pink-100 to-purple-100 flex flex-col">
+      <div className="container mx-auto px-4 py-6 sm:py-12 flex-grow">
         <motion.div 
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -68,6 +69,7 @@ export function LandingPage() {
           </motion.div>
         </motion.div>
       </div>
+      <Footer />
     </div>
   );
 } 
