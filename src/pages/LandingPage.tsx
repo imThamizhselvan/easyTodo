@@ -12,13 +12,9 @@ export function LandingPage() {
           animate={{ y: 0, opacity: 1 }}
           className="text-center mb-8 sm:mb-12"
         >
-          <motion.h1 
-            className="text-4xl sm:text-6xl font-bold text-purple-600 mb-4 px-2"
-            animate={{ scale: [1, 1.1, 1] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-          >
+          <h1 className="text-4xl sm:text-6xl font-bold text-purple-600 mb-4 px-2">
             ✨ Easy Todo ✨
-          </motion.h1>
+          </h1>
           <motion.p 
             className="text-xl sm:text-2xl text-purple-500 px-4"
             initial={{ opacity: 0 }}

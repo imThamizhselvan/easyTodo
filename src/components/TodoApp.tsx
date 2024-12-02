@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { LogOut, Sparkles, Star, Party } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { TodoItem } from './TodoItem';
 import { TodoInput } from './TodoInput';
 import { useAuth } from '../hooks/useAuth';
@@ -7,14 +8,20 @@ import { useTodos } from '../hooks/useTodos';
 import { supabase } from '../lib/supabase';
 
 export function TodoApp() {
+  const navigate = useNavigate();
   const { user } = useAuth();
   const { todos, loading: todosLoading, addTodo, toggleTodo, deleteTodo } = useTodos(user?.id);
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    navigate('/');
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 to-purple-100 py-6 sm:py-12 px-4">
       <div className="max-w-2xl mx-auto relative">
         <motion.button
-          onClick={() => supabase.auth.signOut()}
+          onClick={handleSignOut}
           className="absolute right-2 sm:right-0 top-2 text-purple-500 hover:text-purple-700 transition-colors z-50 bg-white/50 p-2 rounded-full backdrop-blur-sm"
           title="Sign Out"
           whileHover={{ scale: 1.1, rotate: 10 }}
@@ -29,15 +36,11 @@ export function TodoApp() {
           className="text-center mb-8 sm:mb-12"
         >
           <motion.div className="mb-4 sm:mb-6 pt-2">
-            <motion.h1 
-              className="text-4xl sm:text-6xl font-bold text-purple-600 mb-4 flex items-center justify-center gap-2 sm:gap-3"
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-            >
+            <h1 className="text-4xl sm:text-6xl font-bold text-purple-600 mb-4 flex items-center justify-center gap-2 sm:gap-3">
               <Sparkles className="text-yellow-400 w-6 h-6 sm:w-8 sm:h-8" />
               ✨ Easy Todo ✨
               <Sparkles className="text-yellow-400 w-6 h-6 sm:w-8 sm:h-8" />
-            </motion.h1>
+            </h1>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
