@@ -1,5 +1,6 @@
 import { useRegisterSW } from 'virtual:pwa-register/react';
 import { motion } from 'framer-motion';
+import type { RegisterSWOptions } from 'vite-plugin-pwa/types';
 
 export function ReloadPrompt() {
   const {
@@ -7,13 +8,13 @@ export function ReloadPrompt() {
     needRefresh: [needRefresh, setNeedRefresh],
     updateServiceWorker,
   } = useRegisterSW({
-    onRegistered(r) {
-      console.log('SW Registered');
+    onRegistered(registration: ServiceWorkerRegistration | undefined) {
+      console.log('SW Registered:', registration);
     },
-    onRegisterError(error) {
-      console.log('SW registration error', error);
+    onRegisterError(error: Error) {
+      console.log('SW registration error:', error);
     },
-  });
+  } as RegisterSWOptions);
 
   const close = () => {
     setOfflineReady(false);
