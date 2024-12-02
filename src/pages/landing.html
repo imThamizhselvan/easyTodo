@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Todo - Make Tasks Fun!</title>
+    <style>
+        /* Keeping the existing styles and adding new ones */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        }
+
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: popIn 1s ease-out;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: slideIn 1s ease-out;
+        }
+
+        .login-button {
+            background: #fff;
+            color: #ff6b6b;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            animation: float 3s infinite;
+        }
+
+        .login-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            background: white;
+            border-radius: 30px;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            text-align: center;
+            background: rgba(255,255,255,0.9);
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateX(-100px); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .logo { font-size: 3rem; }
+            .tagline { font-size: 1.2rem; }
+            .features { padding: 2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <h1 class="logo">✨ Easy Todo ✨</h1>
+        <p class="tagline">Make your tasks fun and easy to manage!</p>
+        <button class="login-button" onclick="window.location.href='/login'">
+            Get Started →
+        </button>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Simple Tasks</h3>
+                <p>Easy to create and manage your daily tasks</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Fun Design</h3>
+                <p>Colorful and engaging interface</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌟</div>
+                <h3>Achievements</h3>
+                <p>Earn rewards as you complete tasks</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
