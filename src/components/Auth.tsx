@@ -34,7 +34,6 @@ export function Auth() {
               },
             }}
             providers={['google']}
-            redirectTo={`${window.location.origin}/todos`}
           />
         </div>
       </div>

@@ -1,9 +1,16 @@
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { Footer } from '../components/Footer';
+import { useAuth } from '../hooks/useAuth';
 
 export function LandingPage() {
   const navigate = useNavigate();
+  const { user, loading } = useAuth();
+
+  // If user is authenticated, redirect to todos page
+  if (!loading && user) {
+    return <Navigate to="/todos" replace />;
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 to-purple-100 flex flex-col">

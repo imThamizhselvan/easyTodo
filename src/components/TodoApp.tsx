@@ -63,13 +63,37 @@ export function TodoApp() {
           </motion.div>
 
           {todosLoading ? (
-            <motion.div 
-              className="text-center py-20"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-            >
-              <Star className="w-12 h-12 text-purple-500 mx-auto" />
-            </motion.div>
+            <div className="space-y-4 mt-8">
+              {[1, 2, 3].map((i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.2 }}
+                  className="bg-white/50 backdrop-blur-sm p-4 sm:p-6 rounded-xl sm:rounded-2xl shadow-sm"
+                >
+                  <div className="flex items-center gap-4">
+                    <motion.div
+                      animate={{ scale: [1, 0.8, 1] }}
+                      transition={{ repeat: Infinity, duration: 1.5, delay: i * 0.2 }}
+                      className="w-6 h-6 rounded-full bg-purple-200"
+                    />
+                    <div className="flex-1 space-y-2">
+                      <motion.div 
+                        className="h-4 bg-purple-200 rounded w-3/4"
+                        animate={{ opacity: [0.5, 0.7, 0.5] }}
+                        transition={{ repeat: Infinity, duration: 1.5, delay: i * 0.2 }}
+                      />
+                      <motion.div 
+                        className="h-3 bg-purple-200/70 rounded w-1/2"
+                        animate={{ opacity: [0.3, 0.5, 0.3] }}
+                        transition={{ repeat: Infinity, duration: 1.5, delay: i * 0.2 }}
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           ) : (
             <motion.div
               initial={{ opacity: 0, y: 20 }}

@@ -22,12 +22,40 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
+function AuthRoute({ children }: { children: React.ReactNode }) {
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center">
+        <div className="text-2xl text-purple-600">Loading...</div>
+      </div>
+    );
+  }
+
+  if (user) {
+    return <Navigate to="/todos" />;
+  }
+
+  return <>{children}</>;
+}
+
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/login" element={<Auth />} />
+        <Route 
+          path="/" 
+          element={<LandingPage />} 
+        />
+        <Route
+          path="/login"
+          element={
+            <AuthRoute>
+              <Auth />
+            </AuthRoute>
+          }
+        />
         <Route
           path="/todos"
           element={
@@ -36,6 +64,8 @@ function App() {
             </ProtectedRoute>
           }
         />
+        {/* Catch all other routes and redirect to landing */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
