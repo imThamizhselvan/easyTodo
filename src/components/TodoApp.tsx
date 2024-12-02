@@ -12,23 +12,23 @@ export function TodoApp() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 to-purple-100 py-6 sm:py-12 px-4">
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-2xl mx-auto relative">
+        <motion.button
+          onClick={() => supabase.auth.signOut()}
+          className="absolute right-2 sm:right-0 top-2 text-purple-500 hover:text-purple-700 transition-colors z-50 bg-white/50 p-2 rounded-full backdrop-blur-sm"
+          title="Sign Out"
+          whileHover={{ scale: 1.1, rotate: 10 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <LogOut size={20} className="sm:w-6 sm:h-6" />
+        </motion.button>
+
         <motion.div
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          className="text-center mb-8 sm:mb-12 relative"
+          className="text-center mb-8 sm:mb-12"
         >
-          <motion.button
-            onClick={() => supabase.auth.signOut()}
-            className="absolute right-2 sm:right-0 top-0 text-purple-500 hover:text-purple-700 transition-colors"
-            title="Sign Out"
-            whileHover={{ scale: 1.1, rotate: 10 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <LogOut size={20} className="sm:w-6 sm:h-6" />
-          </motion.button>
-
-          <motion.div className="mb-4 sm:mb-6">
+          <motion.div className="mb-4 sm:mb-6 pt-2">
             <motion.h1 
               className="text-4xl sm:text-6xl font-bold text-purple-600 mb-4 flex items-center justify-center gap-2 sm:gap-3"
               animate={{ scale: [1, 1.1, 1] }}
