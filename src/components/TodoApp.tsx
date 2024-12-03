@@ -20,15 +20,24 @@ export function TodoApp() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 to-purple-100 flex flex-col relative">
-      {/* Hello Kitty background pattern */}
+      {/* Hello Kitty background */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.03] bg-repeat"
+        className="absolute inset-0 pointer-events-none opacity-[0.04] bg-repeat"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 10c-11 0-20 9-20 20s9 20 20 20 20-9 20-20-9-20-20-20zm0 36c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16z' fill='%23FF69B4' fill-rule='evenodd'/%3E%3Ccircle cx='25' cy='27' r='2' fill='%23FF69B4'/%3E%3Ccircle cx='35' cy='27' r='2' fill='%23FF69B4'/%3E%3Cpath d='M30 32c-2.2 0-4 1.8-4 4h8c0-2.2-1.8-4-4-4z' fill='%23FF69B4'/%3E%3Cpath d='M22 18c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2zm20 0c0-1.1-.9-2-2-2s-2 .9-2 2 .9 2 2 2 2-.9 2-2z' fill='%23FF69B4'/%3E%3C/svg%3E")`,
-          backgroundSize: '60px 60px'
+          backgroundImage: `url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTUwIDkwYzIyLjA5MSAwIDQwLTE3LjkwOSA0MC00MFM3Mi4wOTEgMTAgNTAgMTAgMTAgMjcuOTA5IDEwIDUwczE3LjkwOSA0MCA0MCA0MHoiIGZpbGw9IiNGRjY5QjQiIGZpbGwtb3BhY2l0eT0iMC4yIi8+CiAgPGNpcmNsZSBjeD0iMzUiIGN5PSI0MCIgcj0iNSIgZmlsbD0iI0ZGNjlCNCIvPgogIDxjaXJjbGUgY3g9IjY1IiBjeT0iNDAiIHI9IjUiIGZpbGw9IiNGRjY5QjQiLz4KICA8cGF0aCBkPSJNNDAgNjBjMCA1LjUyMyA0LjQ3NyAxMCAxMCAxMHMxMC00LjQ3NyAxMC0xMEg0MHoiIGZpbGw9IiNGRjY5QjQiLz4KICA8cGF0aCBkPSJNMjUgMzBjMC0yLjc2MS0yLjIzOS01LTUtNXMtNSAyLjIzOS01IDUgMi4yMzkgNSA1IDUgNS0yLjIzOSA1LTV6TTg1IDMwYzAtMi43NjEtMi4yMzktNS01LTVzLTUgMi4yMzktNSA1IDIuMjM5IDUgNSA1IDUtMi4yMzkgNS01eiIgZmlsbD0iI0ZGNjlCNCIvPgogIDxwYXRoIGQ9Ik0yNSAxNWMwLTIuNzYxLTIuMjM5LTUtNS01cy01IDIuMjM5LTUgNSAyLjIzOSA1IDUgNSA1LTIuMjM5IDUtNXpNODUgMTVjMC0yLjc2MS0yLjIzOS01LTUtNXMtNSAyLjIzOS01IDUgMi4yMzkgNSA1IDUgNS0yLjIzOSA1LTV6IiBmaWxsPSIjRkY2OUI0Ii8+Cjwvc3ZnPg==')`
         }}
       />
       
+      {/* Hello Kitty bow decorations */}
+      <div className="absolute top-0 right-0 w-24 h-24 opacity-[0.06] pointer-events-none">
+        <div 
+          className="w-full h-full"
+          style={{
+            backgroundImage: `url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTUwIDIwYzE2LjU2OSAwIDMwIDEzLjQzMSAzMCAzMEM4MCA2Ni41NjkgNjYuNTY5IDgwIDUwIDgwIDMzLjQzMSA4MCAyMCA2Ni41NjkgMjAgNTBjMC0xNi41NjkgMTMuNDMxLTMwIDMwLTMweiIgZmlsbD0iI0ZGNjlCNCIvPgogIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjEwIiBmaWxsPSIjRkZGIi8+Cjwvc3ZnPg==')`
+          }}
+        />
+      </div>
+
       <div className="flex-grow py-6 sm:py-12 px-4 relative">
         <div className="max-w-2xl mx-auto relative">
           <motion.button
