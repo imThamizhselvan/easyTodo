@@ -22,21 +22,15 @@ export function TodoApp() {
     <div className="min-h-screen bg-gradient-to-br from-pink-100 to-purple-100 flex flex-col relative">
       {/* Hello Kitty background */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.04] bg-repeat"
+        className="absolute inset-0 pointer-events-none opacity-[0.08] bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTUwIDkwYzIyLjA5MSAwIDQwLTE3LjkwOSA0MC00MFM3Mi4wOTEgMTAgNTAgMTAgMTAgMjcuOTA5IDEwIDUwczE3LjkwOSA0MCA0MCA0MHoiIGZpbGw9IiNGRjY5QjQiIGZpbGwtb3BhY2l0eT0iMC4yIi8+CiAgPGNpcmNsZSBjeD0iMzUiIGN5PSI0MCIgcj0iNSIgZmlsbD0iI0ZGNjlCNCIvPgogIDxjaXJjbGUgY3g9IjY1IiBjeT0iNDAiIHI9IjUiIGZpbGw9IiNGRjY5QjQiLz4KICA8cGF0aCBkPSJNNDAgNjBjMCA1LjUyMyA0LjQ3NyAxMCAxMCAxMHMxMC00LjQ3NyAxMC0xMEg0MHoiIGZpbGw9IiNGRjY5QjQiLz4KICA8cGF0aCBkPSJNMjUgMzBjMC0yLjc2MS0yLjIzOS01LTUtNXMtNSAyLjIzOS01IDUgMi4yMzkgNSA1IDUgNS0yLjIzOSA1LTV6TTg1IDMwYzAtMi43NjEtMi4yMzktNS01LTVzLTUgMi4yMzktNSA1IDIuMjM5IDUgNSA1IDUtMi4yMzkgNS01eiIgZmlsbD0iI0ZGNjlCNCIvPgogIDxwYXRoIGQ9Ik0yNSAxNWMwLTIuNzYxLTIuMjM5LTUtNS01cy01IDIuMjM5LTUgNSAyLjIzOSA1IDUgNSA1LTIuMjM5IDUtNXpNODUgMTVjMC0yLjc2MS0yLjIzOS01LTUtNXMtNSAyLjIzOS01IDUgMi4yMzkgNSA1IDUgNS0yLjIzOSA1LTV6IiBmaWxsPSIjRkY2OUI0Ii8+Cjwvc3ZnPg==')`
+          backgroundImage: `url('https://wallpapers-clan.com/wp-content/uploads/2024/07/hello-kitty-cute-background-background-scaled.jpg')`,
+          filter: 'saturate(0.8) brightness(1.2)'
         }}
       />
       
-      {/* Hello Kitty bow decorations */}
-      <div className="absolute top-0 right-0 w-24 h-24 opacity-[0.06] pointer-events-none">
-        <div 
-          className="w-full h-full"
-          style={{
-            backgroundImage: `url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZD0iTTUwIDIwYzE2LjU2OSAwIDMwIDEzLjQzMSAzMCAzMEM4MCA2Ni41NjkgNjYuNTY5IDgwIDUwIDgwIDMzLjQzMSA4MCAyMCA2Ni41NjkgMjAgNTBjMC0xNi41NjkgMTMuNDMxLTMwIDMwLTMweiIgZmlsbD0iI0ZGNjlCNCIvPgogIDxjaXJjbGUgY3g9IjUwIiBjeT0iNTAiIHI9IjEwIiBmaWxsPSIjRkZGIi8+Cjwvc3ZnPg==')`
-          }}
-        />
-      </div>
+      {/* Content overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-pink-100/90 to-purple-100/90 pointer-events-none" />
 
       <div className="flex-grow py-6 sm:py-12 px-4 relative">
         <div className="max-w-2xl mx-auto relative">
