@@ -33,7 +33,6 @@ export function Auth() {
                 },
               },
             }}
-            providers={['google']}
           />
         </div>
       </div>
