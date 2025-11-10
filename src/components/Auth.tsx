@@ -22,6 +22,7 @@ export function Auth() {
         <div className="w-full max-w-sm sm:max-w-md mx-auto p-6 sm:p-8 bg-white rounded-xl sm:rounded-2xl shadow-md">
           <SupabaseAuth
             supabaseClient={supabase}
+            providers={[]}
             appearance={{
               theme: ThemeSupa,
               variables: {
